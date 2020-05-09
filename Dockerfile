@@ -8,10 +8,10 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shangh
 
 ENV VERSION=2.2.1
 RUN cd / && wget https://github.com/cookieY/Yearning/releases/download/v$VERSION/Yearning-$VERSION.linux-amd64.zip \
-    && unzip Yearning-$VERSION.linux-amd64.zip && mv Yearning-go opt && rm -rf Yearning-$VERSION.linux-amd64.zip
+    && unzip Yearning-$VERSION.linux-amd64.zip && rm -rf Yearning-$VERSION.linux-amd64.zip
 EXPOSE 8000
-WORKDIR /opt
+WORKDIR /Yearning-go
 
-ENTRYPOINT  ["/opt/Yearning"]
+ENTRYPOINT  ["/Yearning-go/Yearning"]
 
 CMD ["-m", "-s"]

@@ -27,6 +27,7 @@ services:
       - "8000:8000"
     environment:
       MYSQL_ADDR: mysql
+      MYSQL_PORT: 3306
       MYSQL_DB: yearning      
       MYSQL_USER: yearning
       MYSQL_PASSWORD: yearning

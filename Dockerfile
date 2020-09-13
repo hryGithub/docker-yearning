@@ -6,10 +6,10 @@ RUN apk add --no-cache tzdata unzip
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" >> /etc/timezone \
     && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
 
-ENV VERSION=2.3.0-RC2
+ENV VERSION=2.3.0
 
-RUN cd / && wget https://github.com/cookieY/Yearning/releases/download/v$VERSION/Yearning-$VERSION.linux-amd64.zip \
-    && unzip Yearning-$VERSION.linux-amd64.zip && rm -rf Yearning-$VERSION.linux-amd64.zip
+RUN cd / && wget https://github.com/cookieY/Yearning/releases/download/v$VERSION/Yearning-$VERSION-RC2.linux-amd64.zip \
+    && unzip Yearning-$VERSION-RC2.linux-amd64.zip && rm -rf Yearning-$VERSION-RC2.linux-amd64.zip
 EXPOSE 8000
 WORKDIR /Yearning-go
 

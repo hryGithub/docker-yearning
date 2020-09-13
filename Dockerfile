@@ -8,8 +8,8 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shangh
 
 ENV VERSION=2.3.0
 
-RUN cd / && wget https://github.com/cookieY/Yearning/releases/download/v$VERSION/Yearning-$VERSION-RC2.linux-amd64.zip \
-    && unzip Yearning-$VERSION-RC2.linux-amd64.zip && rm -rf Yearning-$VERSION-RC2.linux-amd64.zip
+RUN cd / && wget https://github.com/cookieY/Yearning/releases/download/v$VERSION/Yearning-v$VERSION-RC2.linux-amd64.zip \
+    && unzip Yearning-v$VERSION-RC2.linux-amd64.zip && rm -rf Yearning-v$VERSION-RC2.linux-amd64.zip
 EXPOSE 8000
 WORKDIR /Yearning-go
 

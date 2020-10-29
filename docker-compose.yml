@@ -26,6 +26,7 @@ services:
     ports:
       - "8000:8000"
     environment:
+      WEBSITE: yearning.yourdomain
       MYSQL_ADDR: mysql:3306
       MYSQL_DB: yearning      
       MYSQL_USER: yearning

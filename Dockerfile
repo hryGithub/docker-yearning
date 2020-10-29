@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-sed -i "s@dl-cdn.alpinelinux.org@mirrors.aliyun.com@g" /etc/apk/repositories
+RUN sed -i "s@dl-cdn.alpinelinux.org@mirrors.aliyun.com@g" /etc/apk/repositories
 RUN apk add --no-cache tzdata unzip libc6-compat
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" >> /etc/timezone \
     && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
@@ -14,7 +14,8 @@ RUN cd / && wget https://github.com/cookieY/Yearning/releases/download/v$VERSION
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 
 EXPOSE 8000
-WORKDIR /Yearning-go
+VOLUME ["/Yearning-go"]
+
 
 ENTRYPOINT  ["sh", "/docker-entrypoint.sh"]
 

@@ -9,7 +9,7 @@ ENV VERSION=2.3.0
 ENV WEBSITE='127.0.0.1'
 
 RUN cd / && wget https://github.com/cookieY/Yearning/releases/download/v$VERSION/Yearning-$VERSION-GA.linux-amd64.zip \
-    && unzip Yearning-$VERSION-4kstars.linux-amd64.zip && rm -rf Yearning-$VERSION-4kstars.linux-amd64.zip
+    && unzip Yearning-$VERSION-GA.linux-amd64.zip && rm -rf Yearning-$VERSION-GA.linux-amd64.zip
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 

@@ -8,7 +8,7 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shangh
 ENV VERSION=2.3.0
 ENV WEBSITE='127.0.0.1'
 
-RUN cd / && wget https://github.com/cookieY/Yearning/releases/download/v$VERSION/Yearning-$VERSION-GA.linux-amd64.zip \
+RUN cd / && wget https://github.com/cookieY/Yearning/releases/download/v$VERSION/Yearning-$VERSION-GA-linux-amd64.zip \
     && unzip Yearning-$VERSION-GA.linux-amd64.zip && rm -rf Yearning-$VERSION-GA.linux-amd64.zip
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh

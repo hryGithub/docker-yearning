@@ -21,6 +21,6 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: hyr326/yearning
-        tags: "v${{ env.STATE_VERSION }},latest"
+        tags: "v${{ env.VERSION }},latest"
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}

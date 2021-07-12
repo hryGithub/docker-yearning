@@ -8,8 +8,8 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shangh
 ENV VERSION=2.3.3.2
 ENV WEBSITE='127.0.0.1'
 
-RUN cd / && wget $(curl -s https://api.github.com/repos/cookieY/Yearning/releases |grep browser_download_url |grep "$VERSION-"|awk '{print $2}'|sed 's@"@@g') \
-    && unzip $(ls *.zip) && rm -rf *.zip __MACOSX
+RUN mkdir /Yearning-go && cd /Yearning-go && wget $(curl -s https://api.github.com/repos/cookieY/Yearning/releases |grep browser_download_url |grep "$VERSION-"|awk '{print $2}'|sed 's@"@@g') \
+    && unzip $(ls *.zip) && rm -rf *.zip __MACOSX 
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 

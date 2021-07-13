@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/Yearning-go/Yearning -b "$WEBSITE" -m -s
+./Yearning install && ./Yearning run --push "$WEBSITE" -port $PORT

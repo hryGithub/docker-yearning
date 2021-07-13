@@ -8,6 +8,7 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shangh
 ENV VERSION=2.3.3.2
 ENV WEBSITE='127.0.0.1' \
     MYSQL_ADDR= '127.0.0.1' \
+    MYSQL_PORT= 3306 \
     MYSQL_DB= 'yearning'\
     MYSQL_USER= 'yearning' \
     MYSQL_PASSWORD= 'yearning' 

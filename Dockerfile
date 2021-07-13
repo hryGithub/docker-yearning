@@ -14,7 +14,9 @@ RUN mkdir /Yearning-go && cd /Yearning-go && wget $(curl -s https://api.github.c
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 
 WORKDIR /Yearning-go
+
 EXPOSE 8000
+
 VOLUME ["/Yearning-go"]
 
 

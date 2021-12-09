@@ -5,7 +5,7 @@ RUN apk add --no-cache tzdata unzip libc6-compat curl
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" >> /etc/timezone \
     && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
 
-ENV VERSION=2.3.4
+ENV VERSION=2.3.5
 ENV WEBSITE='127.0.0.1' \
     MYSQL_ADDR='127.0.0.1' \
     MYSQL_PORT=3306 \

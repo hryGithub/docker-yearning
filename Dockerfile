@@ -5,7 +5,7 @@ RUN sed -i "s@dl-cdn.alpinelinux.org@mirrors.aliyun.com@g" /etc/apk/repositories
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" >> /etc/timezone \
     && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
 
-ENV VERSION=2.3.5
+ENV VERSION=3.0.0
 ENV WEBSITE='127.0.0.1' \
     MYSQL_ADDR='127.0.0.1' \
     MYSQL_PORT=3306 \

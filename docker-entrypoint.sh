@@ -1,4 +1,5 @@
 #!/bin/sh
+cd /opt/yearning
 sed -i 's@Db = "Yearning"@Db = "$MYSQL_DB"@g' conf.toml
 sed -i 's@Host = "127.0.0.1"@Host = "$MYSQL_ADDR"@g' conf.toml
 sed -i 's@Port = "3306"@Port = "$MYSQL_PORT"@g' conf.toml

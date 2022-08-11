@@ -13,16 +13,16 @@ ENV WEBSITE='127.0.0.1' \
     MYSQL_USER='yearning' \
     MYSQL_PASSWORD='yearning' 
 
-RUN mkdir /Yearning-go && cd /Yearning-go && wget $(curl -s https://api.github.com/repos/cookieY/Yearning/releases |grep browser_download_url |grep "$VERSION-"|awk '{print $2}'|sed 's@"@@g') \
-    && unzip $(ls *.zip) && rm -rf *.zip __MACOSX 
+RUN cd /opt && wget $(curl -s https://api.github.com/repos/cookieY/Yearning/releases |grep browser_download_url |grep "$VERSION-"|awk '{print $2}'|sed 's@"@@g') \
+    && unzip $(ls *.zip) && rm -rf *.zip __MACOSX && mv Yearning yearning 
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 
-WORKDIR /Yearning-go
+WORKDIR /opt/yearning
 
 EXPOSE 8000
 
-VOLUME ["/Yearning-go"]
+VOLUME ["/opt/yearning"]
 
 
 ENTRYPOINT  ["sh", "/docker-entrypoint.sh"]

@@ -1,7 +1,7 @@
 FROM alpine:3.12
 
 RUN sed -i "s@dl-cdn.alpinelinux.org@mirrors.aliyun.com@g" /etc/apk/repositories \
-    && apk add --no-cache tzdata unzip libc6-compat curl \
+    && apk add --no-cache expect tzdata unzip libc6-compat curl \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" >> /etc/timezone \
     && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
 

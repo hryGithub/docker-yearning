@@ -8,10 +8,10 @@ sed -i 's@User = "root"@User = "$MYSQL_USER"@g' conf.toml
 
 #初始化
 expect -c '
-    	./Yearning install 
-    	expect " [yes|no]"
-    	send "yes\r"
-	    expect eof
-    '
+   	spawn ./Yearning install
+   	expect "*:"
+   	send "yes\r"
+	expect eof
+'
 
 ./Yearning run 

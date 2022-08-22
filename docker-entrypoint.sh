@@ -5,4 +5,13 @@ sed -i 's@Host = "127.0.0.1"@Host = "$MYSQL_ADDR"@g' conf.toml
 sed -i 's@Port = "3306"@Port = "$MYSQL_PORT"@g' conf.toml
 sed -i 's@Password = ""@Password = "$MYSQL_PASSWORD"@g' conf.toml
 sed -i 's@User = "root"@User = "$MYSQL_USER"@g' conf.toml
-./Yearning install && ./Yearning run 
+
+#初始化
+expect -c '
+    	./Yearning install 
+    	expect " [yes|no]"
+    	send "yes\r"
+	    expect eof
+    '
+
+./Yearning run 

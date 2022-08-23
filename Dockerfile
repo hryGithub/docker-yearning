@@ -1,9 +1,8 @@
-FROM alpine:3.16
+FROM alpine:3.12
 
 RUN sed -i "s@dl-cdn.alpinelinux.org@mirrors.aliyun.com@g" /etc/apk/repositories \
-    && apk add --no-cache expect perl perl-dbd-mysql tzdata unzip libc6-compat curl \
-    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" >> /etc/timezone \
-    && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
+    && apk add --no-cache expect perl perl-dbd-mysql bash tzdata libc6-compat tzdata unzip libc6-compat curl \
+    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" >> /etc/timezone 
 
 ENV VERSION=3.0.7
 ENV WEBSITE='127.0.0.1' \

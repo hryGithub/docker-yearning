@@ -1,7 +1,7 @@
-FROM alpine:3.12
+FROM alpine:3.16
 
 RUN sed -i "s@dl-cdn.alpinelinux.org@mirrors.aliyun.com@g" /etc/apk/repositories \
-    && apk add --no-cache expect tzdata unzip libc6-compat curl \
+    && apk add --no-cache expect perl perl-dbd-mysql tzdata unzip libc6-compat curl \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" >> /etc/timezone \
     && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
 
@@ -17,6 +17,9 @@ RUN cd /opt && wget $(curl -s https://api.github.com/repos/cookieY/Yearning/rele
     && unzip $(ls *.zip) && rm -rf *.zip __MACOSX && mv Yearning yearning 
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
+ADD pt-online-schema-change /usr/local/bin/pt-online-schema-change
+
+RUN chmod +x /usr/local/bin/pt-online-schema-change
 
 WORKDIR /opt/yearning
 

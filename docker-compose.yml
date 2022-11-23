@@ -31,6 +31,8 @@ services:
       MYSQL_DB: yearning      
       MYSQL_USER: yearning
       MYSQL_PASSWORD: yearning
+      SECRET_KEY: dbcjqheupqjsuwsm
+      IS_DOCKER: is_docker
     networks:
       - yearning
 

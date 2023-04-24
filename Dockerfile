@@ -4,7 +4,7 @@ RUN sed -i "s@dl-cdn.alpinelinux.org@mirrors.aliyun.com@g" /etc/apk/repositories
     && apk add --no-cache expect perl perl-dbd-mysql bash tzdata libc6-compat tzdata unzip libc6-compat curl \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" >> /etc/timezone 
 
-ENV VERSION=3.1.3
+ENV VERSION=3.1.4
 ENV WEBSITE='127.0.0.1' \
     MYSQL_ADDR='127.0.0.1' \
     MYSQL_PORT=3306 \

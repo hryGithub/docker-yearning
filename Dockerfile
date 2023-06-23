@@ -26,6 +26,5 @@ EXPOSE 8000
 
 VOLUME ["/opt/yearning"]
 
-
 ENTRYPOINT  ["sh", "/docker-entrypoint.sh"]
 
